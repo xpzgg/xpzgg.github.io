@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
   <meta name="description" content="Code For Fun">
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="Code For Fun">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Jason Yu">
 <meta name="twitter:card" content="summary">
 
@@ -35,7 +35,7 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Jason's Blog</title>
@@ -57,7 +57,10 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -78,6 +81,14 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
 
 
 
@@ -96,10 +107,10 @@
     <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -119,8 +130,13 @@
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -137,7 +153,7 @@
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
+  <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -179,9 +195,9 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">发表于</span>
 
-      <time title="Created: 2022-02-18 21:01:45" itemprop="dateCreated datePublished" datetime="2022-02-18T21:01:45+08:00">2022-02-18</time>
+      <time title="创建时间：2022-02-18 21:01:45" itemprop="dateCreated datePublished" datetime="2022-02-18T21:01:45+08:00">2022-02-18</time>
     </span>
 
   
@@ -242,9 +258,9 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">发表于</span>
 
-      <time title="Created: 2022-02-18 20:57:58" itemprop="dateCreated datePublished" datetime="2022-02-18T20:57:58+08:00">2022-02-18</time>
+      <time title="创建时间：2022-02-18 20:57:58" itemprop="dateCreated datePublished" datetime="2022-02-18T20:57:58+08:00">2022-02-18</time>
     </span>
 
   
@@ -258,6 +274,86 @@
     
     <div class="post-body" itemprop="articleBody">
           
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/18/824/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason Yu">
+      <meta itemprop="description" content="Code For Fun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/18/824/" class="post-title-link" itemprop="url">6.824</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-18 16:03:36" itemprop="dateCreated datePublished" datetime="2022-02-18T16:03:36+08:00">2022-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-02-19 14:17:10" itemprop="dateModified" datetime="2022-02-19T14:17:10+08:00">2022-02-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="6-824-raft"><a href="#6-824-raft" class="headerlink" title="6.824 raft"></a>6.824 raft</h1><p>[TOC] </p>
+<h2 id="detail"><a href="#detail" class="headerlink" title="detail"></a>detail</h2><p>election timout</p>
+<p>当 leader 失效时, 系统的不可用时间基本上就是 election timeout, 所以不能设的过大. 但是, 如果设置的过小,又会导致无法在超时之前完成选举.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/18/824/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -305,9 +401,16 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">发表于</span>
 
-      <time title="Created: 2022-02-18 16:03:36" itemprop="dateCreated datePublished" datetime="2022-02-18T16:03:36+08:00">2022-02-18</time>
+      <time title="创建时间：2022-02-18 16:03:36" itemprop="dateCreated datePublished" datetime="2022-02-18T16:03:36+08:00">2022-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-02-19 13:54:13" itemprop="dateModified" datetime="2022-02-19T13:54:13+08:00">2022-02-19</time>
     </span>
 
   
@@ -320,7 +423,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <p><img src="/../images/2022-01/image-20220219135404740.png" alt="image-20220219135404740"></p>
+
       
     </div>
 
@@ -368,9 +472,9 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">发表于</span>
 
-      <time title="Created: 2022-02-18 14:52:55" itemprop="dateCreated datePublished" datetime="2022-02-18T14:52:55+08:00">2022-02-18</time>
+      <time title="创建时间：2022-02-18 14:52:55" itemprop="dateCreated datePublished" datetime="2022-02-18T14:52:55+08:00">2022-02-18</time>
     </span>
 
   
@@ -414,243 +518,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/05/824/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason Yu">
-      <meta itemprop="description" content="Code For Fun">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/05/824/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-12-05 10:49:40" itemprop="dateCreated datePublished" datetime="2021-12-05T10:49:40+08:00">2021-12-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-02-18 21:47:51" itemprop="dateModified" datetime="2022-02-18T21:47:51+08:00">2022-02-18</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="6-824-raft"><a href="#6-824-raft" class="headerlink" title="6.824 raft"></a>6.824 raft</h1><p>[TOC] </p>
-<h2 id="detail"><a href="#detail" class="headerlink" title="detail"></a>detail</h2><p>election timout</p>
-<p>当 leader 失效时, 系统的不可用时间基本上就是 election timeout, 所以不能设的过大. 但是, 如果设置的过小,又会导致无法在超时之前完成选举.</p>
-<h3 id="log-replication"><a href="#log-replication" class="headerlink" title="log replication"></a>log replication</h3><ol>
-<li>client request contains command</li>
-<li>leader append it as a new entry</li>
-<li>leader send AppendEntries in parallel</li>
-<li>leader apply the entry to its state machine and return result to clien, when entry has been safely replicated</li>
-</ol>
-<p>log entry contains {command, term} and also have a log index</p>
-<img src="/Users/yujiacheng/Library/Application Support/typora-user-images/image-20211225144013141.png" alt="image-20211225144013141" style="zoom: 33%;" />
-
-<p>A log is commited when it has been replicated on a majority of servers.</p>
-<p>leader 维护一个 highest commited log index and include it into AppendEntries (including heartbeat), 相当于告诉 follower, 哪些 log 包含的命令可以被运用到状态机中.</p>
-<img src="/Users/yujiacheng/Library/Application Support/typora-user-images/image-20211225154727064.png" alt="image-20211225154727064" style="zoom:33%;" />
-
-<p>如果不同 log 中的两个 entry 有相同的 intex 和 term, 它们一定有相同的 command,且它们之前的 log entries 也都相同.</p>
-<ul>
-<li><p>一个 leader 在一个 term 中, 对一个 index 只会产生一条 entry</p>
-</li>
-<li><p><strong>consistency check</strong>, leader 新增一条 entry, 当发送 AppendEntries RPC 会带上这条 entry 的上一条 entry 的 intex 和 term, follower 如果没有相同 term 和 index 的 log entry,就拒绝这个 RPC. 通过归纳法可以推出上条 feature.</p>
-</li>
-</ul>
-<p>leader 处理 inconsistency 的方式, forcing the folowers’s logs to duplicate its own. 结合 safety, if a server don’t have a log entry which have been commited, it will not win the election to be a leader. Thus, the leader always have all committed log entries. Thus, it is safy for a leader to overwrite a foollowe’s logs.</p>
-<p>如何找到最后一条 match 的 log entry? 一条一条往前比较, 或者优化为 term by term</p>
-<p>leader matains a nextIndex for each follower, which is the index of the next lop entry the leader will send to that follower. 选上 leader 后, initial this variable to the index to the index just after the last one in its log. 也就是说,如果一条 log 的 index &gt;&#x3D; nextIndex, 那么就需要向 fowolloer 同步这条 log.</p>
-<p>如何更新 commit index ?</p>
-<h3 id="safty"><a href="#safty" class="headerlink" title="safty"></a>safty</h3><h2 id="Hints"><a href="#Hints" class="headerlink" title="Hints"></a>Hints</h2><ul>
-<li><p>rpc 时不要加锁，否则有可能发生死锁</p>
-<p><img src="/images/image-20211205105249811.png" alt="image-20211205105249811"></p>
-</li>
-<li><p>rpc 不加锁时，期间状态可能发生变化，所以 rpc 结束后要先进行一些判断，才能将自己声明为 leader</p>
-</li>
-</ul>
-<h3 id="lab1-tips"><a href="#lab1-tips" class="headerlink" title="lab1 tips"></a>lab1 tips</h3><ul>
-<li>选新 leader 要在5分钟之内完成，所以需要选择合适的 election timeout 和 heartbeat 间隔。</li>
-</ul>
-<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>raft struct, raft 类</p>
-<p>Make(), 创建 sever 实例</p>
-<p>GetStat(), return current term and is leader</p>
-<p>RequestVoteArgs(), RequestVoteReply(), rpc 参数</p>
-<p>RequestVote,  handle vote requestion，</p>
-<ul>
-<li><p>比较 candidate 的 term，比自己小就不给票</p>
-</li>
-<li><p>比较 candidate 的 last log 的 term 和 index，如果比自己小，就不给票</p>
-</li>
-</ul>
-<p>sendRequestVote, send vote rpc</p>
-<p>Leader 选举成功后，像所有其他server发送heartbeat</p>
-<p>候选者的 term &lt;&#x3D; 心跳包的 term，就认定发送者为 leader。候选者在请求投票时，要对比其他 server 的 term，只有比大多数 server up-to-date, 才有资格作为候选者, up-to-date 比较 term 和 log[] 长度</p>
-<p>拥有全部 commited log 的 candidate 才能成为 leader -&gt; commited log 包含在大部分的 server 中 -&gt; candidate 需要拿到大部分选票, 就算其中有一半的 server 没有最新的 commited log，也至少有一个 server 是有 commited log 的，如果这个 candidate 没有最新的 commited log，那么他就拿不到多数选票。</p>
-<p>server 们在交流的时候，发现 term 比别人小，就要更新 term</p>
-<p>Start(), 2b </p>
-<p>ApplyMsg, others to leader in resonse to new entry</p>
-<ul>
-<li>投票 rpc</li>
-<li>心跳 rpc</li>
-<li>follower 周期检查 hb timeout 的 goroutine</li>
-<li>leader 周期发送 heartbeat 的 goroutine</li>
-</ul>
-<p>send rpc 放在单独的 goroutine 中，并在其中处理 response</p>
-<p>初始化，启动，timeout，选举，发送心跳</p>
-<h2 id="lab2a-实现逻辑"><a href="#lab2a-实现逻辑" class="headerlink" title="lab2a 实现逻辑"></a>lab2a 实现逻辑</h2><p>make 初始化 raft 节点时，起一个心跳包超时检测的 goroutine，这样一段时间之后，就有一个节点变成候选者，开始选举。</p>
-<p>确定三个关键时间：</p>
-<ul>
-<li><p>leader 心跳间隔时间</p>
-<ul>
-<li>遍历 peer 发心跳</li>
-</ul>
-</li>
-<li><p>follower 心跳超时时间 election timeout</p>
-<ul>
-<li>转为候选者</li>
-<li>发起选举</li>
-</ul>
-</li>
-<li><p>candidate 过期时间 election timeout</p>
-<ul>
-<li>发起下一轮选举</li>
-</ul>
-</li>
-</ul>
-<p>turn to leader, candidate, follower</p>
-<p>startHeartbeat, startRequestVote</p>
-<p>AppendEntries RPC, RequestVote RPC</p>
-<p>requestVote</p>
-<ul>
-<li>all, 收到比自己大的 term 会转换成 follower</li>
-<li>candidate 收到同期竞选的人的心跳，也要转换成 follower</li>
-<li>follower 的 term 比候选者的大，就不给他投票。（等于也是可以投票的） <ul>
-<li>follower 投票了才会更新 election timeout</li>
-</ul>
-</li>
-</ul>
-<h2 id="lab2b-实现逻辑"><a href="#lab2b-实现逻辑" class="headerlink" title="lab2b 实现逻辑"></a>lab2b 实现逻辑</h2><h3 id="guide"><a href="#guide" class="headerlink" title="guide"></a>guide</h3><p><a target="_blank" rel="noopener" href="https://thesquareplanet.com/blog/students-guide-to-raft/#the-importance-of-details">guide</a></p>
-<ul>
-<li>heartbeat 也要和常规的 AppendEntries 一样进行 log 相关的检测, 因为一旦回复 AppendEntries success 意味着告诉 leader 这个 server 的 log 和 leader 的 prevLogIndex match(包括在此之前的 log). leader 会根据这个信息来决定,是否 commit 某个 log.</li>
-<li>不能简单的把 follower 的 log 根据 AppendEntries 的 prevLogIndex 来截断并append AppendEntries 中的 entries. 仅当发生 conflict 时,才能这样做.</li>
-</ul>
-<p>heartbeat</p>
-<ul>
-<li>不同的 follower 收到的 args 不同</li>
-<li>添加回调</li>
-</ul>
-<p>sendAppendEntries</p>
-<p>appendEntries</p>
-<p>args</p>
-<ul>
-<li>加上 commit index, 收到之后取 min(leader, 当前有的log)</li>
-</ul>
-<p>reply</p>
-<p>candidate 选上 leader 后 reset timer 能否保证立即被 select?</p>
-<p>![image-20220109170116160](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109170116160.png)</p>
-<p>![image-20220109182838354](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109182838354.png)</p>
-<p>issue: leader 分区</p>
-<p>rf 0 重新加入后,应该被 rf2转成 follower 然后拷贝日志</p>
-<p>问题: rf0 根本收不到 AppendEntries </p>
-<p>issue:</p>
-<p>![image-20220109191824727](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109191824727.png)</p>
-<p>![image-20220109191926745](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109191926745.png)</p>
-<p>rf2 的 2 号日志和 rf0 的 2 号日志都被 commit 了却发生了不一致.</p>
-<ol>
-<li><p>0 当选 leader, log [nil, 101]</p>
-<p>![image-20220109195527651](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109195527651.png)</p>
-<p>[nil, 101] commitIndex:1</p>
-<p>![image-20220109195708846](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109195708846.png)</p>
-<p>![image-20220109195729639](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109195729639.png)</p>
-<p>index1 apply 没毛病</p>
-</li>
-<li><p>rf0 leader 开始发生网络分区, 且上层服务再次期间调用 start()</p>
-<p>![image-20220109200120066](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109200120066.png)</p>
-</li>
-<li><p>rf1 rf2 同时 election timeout </p>
-<p>![image-20220109200421562](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109200421562.png)</p>
-</li>
-<li><p>rf1 election timeout</p>
-<p>![image-20220109200605813](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109200605813.png)</p>
-<ol>
-<li><p>rf1 选上leader</p>
-</li>
-<li><p>上层服务调用 start() 增加 rf1 log, index:2 command:103</p>
-</li>
-<li><p>rf2 复制 2 号日志成功</p>
-</li>
-<li><p>![image-20220109202025754](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109202025754.png)</p>
-<p>rf2 突然又收到了 rf 0 的消息</p>
-<p>a. rf0 收到 rf2 的回复,因为 rf2 的 term &#x3D; 3 而 rf0 的 term &#x3D; 1, 所以 rf0 转为 follower</p>
-<p>b. 这里 rf0 转为 follower 后,不应该继续处理心跳消息</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h2><p>![image-20220109203835984](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220109203835984.png)</p>
-<h2 id="issue"><a href="#issue" class="headerlink" title="issue"></a>issue</h2><p>2022&#x2F;01&#x2F;11 23:02:07.790603 initial rf[0]<br>2022&#x2F;01&#x2F;11 23:02:07.791001 initial rf[1]<br>2022&#x2F;01&#x2F;11 23:02:07.791157 initial rf[2]<br>Test (2B): concurrent Start()s …<br>2022&#x2F;01&#x2F;11 23:02:08.016031 rf[1] election timeout start election<br>2022&#x2F;01&#x2F;11 23:02:08.016296 rf[1] term:1 role:2,     sendRequestVote,    To rf[0] args:{Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}<br>2022&#x2F;01&#x2F;11 23:02:08.016392 rf[1] term:1 role:2,     sendRequestVote,    To rf[2] args:{Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}<br>2022&#x2F;01&#x2F;11 23:02:08.017010 rf[2] term:0 role:1 Handle RequestVote, sendRf[1] term:1, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.017122 rf[2] term:1 role:1 Handle RequestVote, sendRf[1] term:1, follower vote<br>2022&#x2F;01&#x2F;11 23:02:08.017352 rf[0] term:0 role:1 Handle RequestVote, sendRf[1] term:1, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.017472 rf[0] term:1 role:1 Handle RequestVote, sendRf[1] term:1, follower vote<br>2022&#x2F;01&#x2F;11 23:02:08.017594 rf[1] term:1 role:2,    handle sendRequestVote reply,    From rf[2],    args:&amp;{Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}    reply:&amp;{Term:1 VoteGranted:true}<br>2022&#x2F;01&#x2F;11 23:02:08.017651 rf[1] term:1 role:2,    handle sendRequestVote reply, Vote success, turn to leader, vote get:2<br>2022&#x2F;01&#x2F;11 23:02:08.118024 rf[1] start heartbeat. log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.118105 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.118630 rf[2] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.118711 rf[2] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.118956 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[2] matchIndex:[0 0 0]<br>2022&#x2F;01&#x2F;11 23:02:08.119229 rf[0] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.119289 rf[0] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.119464 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[0] matchIndex:[0 0 0]<br>2022&#x2F;01&#x2F;11 23:02:08.218707 rf[1] start heartbeat. log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.218892 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.219471 rf[2] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.219579 rf[2] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.220379 rf[0] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.220475 rf[0] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.220691 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[0] matchIndex:[0 0 0]<br>2022&#x2F;01&#x2F;11 23:02:08.273155 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[2] matchIndex:[0 0 0]<br>2022&#x2F;01&#x2F;11 23:02:08.319860 rf[1] start heartbeat. log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.319953 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.469286 rf[0] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.469400 rf[0] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.469485 rf[2] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.469536 rf[2] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}]<br>2022&#x2F;01&#x2F;11 23:02:08.469858 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[0] matchIndex:[0 0 0]<br>2022&#x2F;01&#x2F;11 23:02:08.469966 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1}]<br>2022&#x2F;01&#x2F;11 23:02:08.470020 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.470157 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104}]<br>2022&#x2F;01&#x2F;11 23:02:08.470206 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.470316 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100}]<br>2022&#x2F;01&#x2F;11 23:02:08.470374 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.470462 rf[1] term:1 role:3 FINISH handle AppendEntries response success from rf[2] matchIndex:[0 6 0]<br>2022&#x2F;01&#x2F;11 23:02:08.470566 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103}]<br>2022&#x2F;01&#x2F;11 23:02:08.470617 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.470158 rf[0] election timeout start election<br>2022&#x2F;01&#x2F;11 23:02:08.470702 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101}]<br>2022&#x2F;01&#x2F;11 23:02:08.470778 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.470809 rf[0] term:2 role:2,     sendRequestVote,    To rf[1] args:{Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}<br>2022&#x2F;01&#x2F;11 23:02:08.470891 rf[1] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101} {Term:1 Command:102}]<br>2022&#x2F;01&#x2F;11 23:02:08.470934 rf[1] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.471267 rf[1] term:1 role:3 Handle RequestVote, sendRf[0] term:2, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.471402 rf[1] term:2 role:1 Handle RequestVote, sendRf[0] term:2, not vote<br>2022&#x2F;01&#x2F;11 23:02:08.471938 rf[2] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.470885 rf[0] term:2 role:2,     sendRequestVote,    To rf[2] args:{Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}<br>2022&#x2F;01&#x2F;11 23:02:08.472087 rf[2] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101}] LeaderCommit:0}, log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101}]<br>2022&#x2F;01&#x2F;11 23:02:08.472199 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.472253 rf[2] term:1 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.472458 rf[2] term:1 role:1 follower handle AppendEntries append success, args:&amp;{Term:1 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103}] LeaderCommit:0}, log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101}]<br>2022&#x2F;01&#x2F;11 23:02:08.472623 rf[2] term:1 role:1 Handle RequestVote, sendRf[0] term:2, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.472689 rf[2] term:2 role:1 Handle RequestVote, sendRf[0] term:2, not vote<br>2022&#x2F;01&#x2F;11 23:02:08.472732 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.472839 rf[0] term:2 role:2,    handle sendRequestVote reply,    From rf[2],    args:&amp;{Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}    reply:&amp;{Term:2 VoteGranted:false}<br>2022&#x2F;01&#x2F;11 23:02:08.472974 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.472997 rf[2] term:2 role:1,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.473142 rf[2] term:2 role:1,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.473182 rf[0] term:2 role:2,    handle sendRequestVote reply,    From rf[1],    args:&amp;{Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}    reply:&amp;{Term:2 VoteGranted:false}<br>2022&#x2F;01&#x2F;11 23:02:08.473402 rf[2] term:2 role:1,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.473704 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.473728 rf[2] term:2 role:1,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.473865 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.474018 rf[0] term:2 role:2,    handle AppendEntries term &lt; follower return false and term to leader,    From rf[1] term:1<br>2022&#x2F;01&#x2F;11 23:02:08.695755 rf[2] election timeout start election<br>2022&#x2F;01&#x2F;11 23:02:08.695909 rf[2] term:3 role:2,     sendRequestVote,    To rf[0] args:{Term:3 CandidateId:2 LastLogIndex:5 LastLogTerm:1}<br>2022&#x2F;01&#x2F;11 23:02:08.695960 rf[2] term:3 role:2,     sendRequestVote,    To rf[1] args:{Term:3 CandidateId:2 LastLogIndex:5 LastLogTerm:1}<br>2022&#x2F;01&#x2F;11 23:02:08.696389 rf[1] term:2 role:1 Handle RequestVote, sendRf[2] term:3, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.696490 rf[1] term:3 role:1 Handle RequestVote, sendRf[2] term:3, not vote<br>2022&#x2F;01&#x2F;11 23:02:08.696395 rf[0] term:2 role:2 Handle RequestVote, sendRf[2] term:3, term &gt; turn to follower<br>2022&#x2F;01&#x2F;11 23:02:08.696628 rf[0] term:3 role:1 Handle RequestVote, sendRf[2] term:3, follower vote<br>2022&#x2F;01&#x2F;11 23:02:08.696757 rf[2] term:3 role:2,    handle sendRequestVote reply,    From rf[1],    args:&amp;{Term:3 CandidateId:2 LastLogIndex:5 LastLogTerm:1}    reply:&amp;{Term:3 VoteGranted:false}<br>2022&#x2F;01&#x2F;11 23:02:08.696911 rf[2] term:3 role:2,    handle sendRequestVote reply,    From rf[0],    args:&amp;{Term:3 CandidateId:2 LastLogIndex:5 LastLogTerm:1}    reply:&amp;{Term:3 VoteGranted:true}<br>2022&#x2F;01&#x2F;11 23:02:08.696983 rf[2] term:3 role:2,    handle sendRequestVote reply, Vote success, turn to leader, vote get:2<br>2022&#x2F;01&#x2F;11 23:02:08.797670 rf[2] start heartbeat. log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101}]<br>2022&#x2F;01&#x2F;11 23:02:08.797806 rf[2] heartbeat all send.<br>2022&#x2F;01&#x2F;11 23:02:08.798221 rf[1] term:3 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[2] term:3<br>2022&#x2F;01&#x2F;11 23:02:08.798256 rf[0] term:3 role:1,    handle AppendEntries term &#x3D;&#x3D; follower start handle,    From rf[2] term:3<br>2022&#x2F;01&#x2F;11 23:02:08.798392 rf[1] term:3 role:1 follower handle AppendEntries append success, args:&amp;{Term:3 LeaderId:2 PrevLogIndex:5 PrevLogTerm:1 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>} {Term:1 Command:1} {Term:1 Command:104} {Term:1 Command:100} {Term:1 Command:103} {Term:1 Command:101} {Term:1 Command:102}]<br>2022&#x2F;01&#x2F;11 23:02:08.798392 rf[0] term:3 role:1 follower handle AppendEntries, prevLogIndex too large, args:&amp;{Term:3 LeaderId:2 PrevLogIndex:5 PrevLogTerm:1 Entries:[] LeaderCommit:0}, log:[{Term:0 Command:<nil>}], reply:&amp;{Term:3 Success:false <strong>FailedTerm:0 FirstIndexOfFailedTerm:0}</strong><br>2022&#x2F;01&#x2F;11 23:02:08.798628 rf[2] term:3 role:3 handle AppendEntries response:success update matchIndex[1] from:0 to:5<br>2022&#x2F;01&#x2F;11 23:02:08.798684 rf[2] term:3 role:3 FINISH handle AppendEntries response success from rf[1] matchIndex:<strong>[0 5 0]</strong><br>2022&#x2F;01&#x2F;11 23:02:08.798751 rf[2] term:3 role:3 leader handle AppendEntries response:failed from rf[0] term:3, args prevIndex:5 entries_len:0 nextIndex:6 matchIndex:0, commitIndex:0<br>panic: runtime error: index out of range [-1]</p>
-<p>goroutine 16 [running]:<br>ds&#x2F;src&#x2F;raft.(*Raft).genAppendEntriesParams(…)<br>    &#x2F;home&#x2F;coder&#x2F;6.824&#x2F;src&#x2F;raft&#x2F;raft.go:457<br>ds&#x2F;src&#x2F;raft.(*Raft).handleAppendEntriesResponse(0xc000160380, 0x0, 0xc000010fc0, 0xc00001ad00)<br>    &#x2F;home&#x2F;coder&#x2F;6.824&#x2F;src&#x2F;raft&#x2F;raft.go:435 +0xc1d<br>ds&#x2F;src&#x2F;raft.(*Raft).sendAppendEntries(0xc000160380, 0x0, 0xc000010fc0, 0xc00001ad00, 0x0)<br>    &#x2F;home&#x2F;coder&#x2F;6.824&#x2F;src&#x2F;raft&#x2F;raft.go:398 +0x18f<br>created by ds&#x2F;src&#x2F;raft.(*Raft).startHeartbeat<br>    &#x2F;home&#x2F;coder&#x2F;6.824&#x2F;src&#x2F;raft&#x2F;raft.go:473 +0x2da<br>exit status 2<br>FAIL    ds&#x2F;src&#x2F;raft    1.017s</p>
-<h2 id="issue2022-x2F-01-x2F-11-23-59-38-621407-rf-4-term-1-role-1-Handle-RequestVote-sendRf-0-term-1-follower-vote"><a href="#issue2022-x2F-01-x2F-11-23-59-38-621407-rf-4-term-1-role-1-Handle-RequestVote-sendRf-0-term-1-follower-vote" class="headerlink" title="issue2022&#x2F;01&#x2F;11 23:59:38.621407 rf[4] term:1 role:1 Handle RequestVote, sendRf[0] term:1, follower vote"></a>issue2022&#x2F;01&#x2F;11 23:59:38.621407 rf[4] term:1 role:1 Handle RequestVote, sendRf[0] term:1, follower vote</h2><p>2022&#x2F;01&#x2F;11 23:59:38.621407 rf[4] term:1 role:1 Handle RequestVote, sendRf[0] term:1, follower vote<br>2022&#x2F;01&#x2F;11 23:59:38.621723 rf[4] election timeout start election</p>
-<p>难道 reset election timeout 没有用?</p>
-<h2 id="lab-2C-实现逻辑"><a href="#lab-2C-实现逻辑" class="headerlink" title="lab 2C 实现逻辑"></a>lab 2C 实现逻辑</h2><p>raft should use persister to save its persistent state each time the state changes, ReadRaftState() SaveRaftState()</p>
-<p>task: complete persist() and readPersist(), insert persist at the points where persistent state changes</p>
-<p>curremtTerm, election timeout, receive larger term</p>
-<p>voteFor, follower first vote,  turn to follower, candidate vote for self …</p>
-<p>log, leader <code>start</code>, follower append…</p>
-<p>leader commit 1 term:1 command: 11 </p>
-<p>follower 的 term 增加后  应该重置 voteFor</p>
-<p>发现一个可能导致 2c 速度慢的原因, rf4 一直 election, 但是因为 log 不够新所以一直当不上 leader. 同时他不断的发起选举, 导致正常选举的 rf 不断的增加 term 并且重置</p>
-<p>![image-20220120014306611](&#x2F;Users&#x2F;yujiacheng&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220120014306611.png)</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
 </div>
   </main>
@@ -667,7 +534,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Jason Yu</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
     </div>
