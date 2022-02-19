@@ -8,8 +8,8 @@ subtitle: ''
 description: 'Code For Fun'
 keywords:
 author: Jason Yu
-language: zh
-timezone: ''
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -97,7 +97,16 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: 'git'
+  repo: git@github.com:xpzgg/xpzgg.github.io.git
+
+
+# marked
 marked:
   gfm: true
   pedantic: false
@@ -108,22 +117,16 @@ marked:
   modifyAnchors: 0
   anchorAlias: false
   autolink: true
-  mangle: true
+  mangle: true  
   sanitizeUrl: false
   dompurify: false
   headerIds: true
   lazyload: false
   prependRoot: true
-  postAsset: true
+  postAsset: false
   external_link:
     enable: false
     exclude: []
     nofollow: false
   disableNunjucks: false
   descriptionLists: true
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: 'git'
-  repo: git@github.com:xpzgg/xpzgg.github.io.git
